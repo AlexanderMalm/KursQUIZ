@@ -28,7 +28,7 @@
         android:layout_width="364dp"
         android:layout_height="54dp"
         android:layout_marginBottom="1dp"
-        android:onClick="alt_1"
+        android:onClick="pressed"
 
 
         android:text="1"
@@ -40,7 +40,7 @@
         android:id="@+id/button_alt_two"
         android:layout_width="364dp"
         android:layout_height="54dp"
-        android:onClick="alt_2"
+        android:onClick="pressed"
         android:text="2"
 
         app:layout_constraintBottom_toTopOf="@+id/button_alt_three"
@@ -52,7 +52,7 @@
         android:layout_width="364dp"
         android:layout_height="54dp"
         android:layout_marginBottom="0dp"
-        android:onClick="alt_3"
+        android:onClick="pressed"
         android:text="3"
         app:layout_constraintBottom_toTopOf="@+id/button_alt_four"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,7 +63,7 @@
         android:layout_width="364dp"
         android:layout_height="54dp"
         android:layout_marginBottom="1dp"
-        android:onClick="alt_4"
+        android:onClick="pressed"
         android:text="4"
         app:layout_constraintBottom_toTopOf="@+id/submit_button"
         app:layout_constraintEnd_toEndOf="parent"

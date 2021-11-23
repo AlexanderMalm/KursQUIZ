@@ -2,6 +2,7 @@ package com.example.kursquiz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -16,10 +17,8 @@ public class QuizActivity extends AppCompatActivity {
 
     private TextView question_textView;
     private int currentAnswer;
-    private Button answer_one;
-    private Button answer_two;
-    private Button answer_three;
-    private Button answer_four;
+    private Button answer_one, answer_two, answer_three, answer_four;
+
     private final QHandler qh = new QHandler();
 
     @Override
@@ -54,7 +53,7 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     //Hämtar nästa fråga, har alla besvarats skapas nytt intent där resultatet skickas med och redovisas
-    public void next_question(View v) {
+    private void next_question(View v) {
         if(!qh.game_ended()){
             nextQuestion();
 
@@ -66,6 +65,7 @@ public class QuizActivity extends AppCompatActivity {
         }
     }
 
+/*
     //Funktioner för spara användarens svarsalternativ
     public void alt_1(View v){
         currentAnswer = 1;
@@ -75,13 +75,30 @@ public class QuizActivity extends AppCompatActivity {
         currentAnswer = 2;
     }
 
-    public void alt_3(View v){
-
-        currentAnswer = 3;
-    }
+    public void alt_3(View v)
+    { currentAnswer = 3;  }
 
     public void alt_4(View v){
         currentAnswer = 4;
+    }
+*/
+    @SuppressLint("NonConstantResourceId")
+    public void pressed(View v){
+
+        switch(v.getId()){
+            case R.id.button_alt_one:
+                currentAnswer = 1;
+                break;
+            case R.id.button_alt_two:
+                currentAnswer = 2;
+                break;
+            case R.id.button_alt_three:
+                currentAnswer = 3;
+                break;
+            case R.id.button_alt_four:
+                currentAnswer = 4;
+                break;
+        }
     }
 
     //Testar det angivna svaret och berättar för användaren
